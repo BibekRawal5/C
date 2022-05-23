@@ -3,19 +3,19 @@
 
 int main(void)
 {
-    long creditCardNumber;
-    printf("Please input CC number: \n");
-    scanf("%ld", &creditCardNumber);
-    long workingCC = creditCardNumber;
-    int sum = 0;
-    int count = 0;
-    long divisor = 10;
+    long long creditCardNumber;
+    printf("Please input CC number: ");
+    scanf("%lld", &creditCardNumber);
+    long long workingCC = creditCardNumber;
+    long long sum = 0;
+    long long count = 0;
+    long long divisor = 10;
     char result[11];
 
     // 1st case
     while (workingCC > 0)
     {
-        int lastDigit = workingCC % 10;
+        long long lastDigit = workingCC % 10;
         sum = sum + lastDigit;
         workingCC = workingCC / 100;
     }
@@ -24,9 +24,19 @@ int main(void)
     workingCC = creditCardNumber / 10;
     while (workingCC > 0)
     {
-        int lastDigit = workingCC % 10;
-        int timesTwo = lastDigit * 2;
-        sum = sum + (timesTwo % 10) + (timesTwo / 10);
+        long long lastDigit = workingCC % 10;
+        long long timesTwo = lastDigit * 2;
+        if (timesTwo/10 == 0)
+        {
+            sum = sum + timesTwo;   
+        }
+        else if (timesTwo/10 != 0)
+        {
+            long long firstdigit = timesTwo / 10;
+            long long last = timesTwo % 10;
+            sum = sum + firstdigit + last ; 
+        }
+        
         workingCC = workingCC / 100;
     }
 
@@ -35,18 +45,18 @@ int main(void)
     workingCC = creditCardNumber;
     while (workingCC != 0)
     {
-        workingCC = workingCC / 10;
-        count++;
+       workingCC =workingCC / 10;
+       count++;
     }
 
     // divisor
-    for (int i = 0; i < count - 2; i++)
+    for (long long i = 0; i < count - 2; i++)
     {
         divisor = divisor * 10;
     }
 
-    int firstDigit = creditCardNumber / divisor;
-    int firstTwoDigits = creditCardNumber / (divisor / 10);
+    long long firstDigit = creditCardNumber / divisor;
+    long long firstTwoDigits = creditCardNumber / (divisor / 10);
 
     // final checks
     if (sum % 10 == 0)
