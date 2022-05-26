@@ -54,7 +54,7 @@ int main(void)
     {
         divisor = divisor * 10;
     }
-
+    
     long long firstDigit = creditCardNumber / divisor;
     long long firstTwoDigits = creditCardNumber / (divisor / 10);
 
