@@ -1,4 +1,4 @@
-// return factorial of n
+// return factorial of n using recursion
 
 #include <stdio.h>
 
