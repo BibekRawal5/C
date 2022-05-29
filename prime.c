@@ -13,6 +13,7 @@ int main()
   if (number == 1 || number == 0) 
   {
     printf("1 or 0 is neither prime nor compositive \n");
+    return 1;
   }
 
   else 
@@ -29,18 +30,10 @@ int main()
 
   if (remainder == 0 )
   {
-    if (number>=2)
-    {
      printf("%i is a prime number\n",number );
-    }
   }
 
-   else 
-   {
-     printf("%i is not a prime number\n",number );
-   }
-
-  if (remainder != 0) 
+  else
   {
     printf("%i is divisible by %i other numbers except 1 and itself\n" , number , remainder );
   }
