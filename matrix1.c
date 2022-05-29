@@ -3,7 +3,7 @@
 int main (void)
 {
     int Matrix[2][3];
-    int m, n ;
+    int m, n;
     printf ("Enter value of the matrix elements\n");
     for (m=0 ; m<2 ; m++)
     {
