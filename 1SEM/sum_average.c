@@ -1,4 +1,4 @@
-// Find sum and averadge of elements in array 
+// Find sum and average of elements in array 
 
 #include <stdio.h>
 
