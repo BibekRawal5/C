@@ -39,7 +39,7 @@ float calculate(int a, int b, char op)
     }
     else if (op == '/')
     {
-        result = (a / b);
+        result = ((float) a / (float) b);
     }
     else
     {
