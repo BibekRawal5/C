@@ -4,7 +4,7 @@
 int main()
 {
     //taking a string and printing it
-    char *string, char *cpystring, char *constring;
+    char *string, *cpystring, *constring;
     int length = 0;
     string = malloc(sizeof(char) * 100);
     printf("Enter a string: ");
@@ -49,6 +49,7 @@ int main()
         i++;
         j++;
     }while(string[j] != '\0');
+    constring[i] = '\0';
 
     printf("The concated string: %s\n", constring);
     
