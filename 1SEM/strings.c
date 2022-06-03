@@ -4,14 +4,14 @@
 int main()
 {
     //taking a string and printing it
-    char *string;
+    char *string, char *cpystring, char *constring;
+    int length = 0;
     string = malloc(sizeof(char) * 100);
     printf("Enter a string: ");
     scanf(" %[^\n]s", string);
     printf("Your string : %s\n", string);
 
     //finding length of strings
-    int length = 0;
     for (int i = 0; string[i] != '\0'; i++)
     {
         length++;
@@ -19,7 +19,6 @@ int main()
     printf("Length is: %d\n", length);
 
     // copying a string into another
-    char *cpystring;
     cpystring = malloc(sizeof(char) * 100);
     for (int i = 0; i < length + 1; i++)
     {
@@ -33,7 +32,6 @@ int main()
     printf("New string: %s\n", string);         //for string and not give us a chance to input the new string
 
     //making a new concated string
-    char *constring;
     constring = malloc(sizeof(char) * 200);
     int i = 0;
     int j = 0;
