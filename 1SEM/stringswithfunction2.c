@@ -38,8 +38,7 @@ int main ()
     constring(string, cpystring, concatedstring);    
     printf("The concated string is: %s\n", concatedstring);
 
-
-
+    // freeing memory since we sue malloc to allocate the memory or else we may suffer from memory leak
     free(string);
     free(cpystring);
     free(concatedstring);
