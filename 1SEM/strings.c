@@ -27,10 +27,13 @@ int main()
     printf("The copied string is : %s\n", cpystring);
 
     // entering another string into first string
-    printf("Enter another string: ");
-    scanf(" %[^\n]s", string);                  // adding space(' ') before % in scanf so the compiler just doest take the enter as the newline
-    printf("New string: %s\n", string);         //for string and not give us a chance to input the new string
-
+    printf("Enter another string: "); 
+    scanf(" %[^\n]s", string); 
+    /*adding space(' ') before % in scanf so the compiler just doest take the enter as the newline
+    for string and not give us a chance to input the new string*/                 
+    
+    printf("New string: %s\n", string);        
+    
     //making a new concated string
     constring = malloc(sizeof(char) * 200);
     int i = 0;
