@@ -5,28 +5,16 @@
 #include <time.h>
 
 // MAKING A CONSTANT FOR TOTAL WORDS WE HAVE AVAILABLE
-#define TOTALWORDS 1000
+#define TOTALWORDS 5757
 
 //MAKING FUNCTIONS FOR ALL THE COLOUR USED
-void red()
-{
-    printf("\033[0;31m");
-}
+void red();
 
-void green()
-{
-    printf("\033[0;32m");
-}
+void green();
 
-void yellow()
-{
-    printf("\033[0;33m");
-}
+void yellow();
 
-void reset()
-{
-    printf("\033[0m");
-}
+void reset();
 
 typedef struct
 {
@@ -78,7 +66,6 @@ int main ()
     {
         guess[j] = toupper(guess[j]);
     }
-    
 
 
     for (int i = 0; i < 5; i++)
@@ -125,4 +112,25 @@ int main ()
     reset();
     return 0;
     
+}
+
+
+void red()
+{
+    printf("\033[0;31m");
+}
+
+void yellow()
+{
+    printf("\033[0;33m");
+}
+
+void green()
+{
+    printf("\033[0;32m");
+}
+
+void reset()
+{
+    printf("\033[0m");
 }
