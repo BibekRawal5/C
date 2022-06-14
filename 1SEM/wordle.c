@@ -58,7 +58,8 @@ int main ()
     do
     {
         printf("Guess no %d: ", i+1);
-        scanf(" %s", guess);
+        scanf("%s", guess);
+        fflush(stdin);
     }while(strlen(guess) != 5);
 
     //MAKING THE USER GIVEN WORD IN UPPERCASE TO COMPARE IT WITH THE RANDOM SELECTED WORD BY COMPUTER FROM FILE
