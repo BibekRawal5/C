@@ -115,7 +115,7 @@ int main ()
     
 }
 
-
+//CODE FOR ALL THE COLOURS USED IN THE PROGRAM
 void red()
 {
     printf("\033[0;31m");
