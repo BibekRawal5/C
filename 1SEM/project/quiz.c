@@ -12,7 +12,7 @@ typedef struct
 
 }QUIZ1;
 
-#define SIZE 25
+#define SIZE 55
 
 QUIZ1 quiz [SIZE];
 
