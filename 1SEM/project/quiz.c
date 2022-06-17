@@ -45,9 +45,7 @@ int main()
     for(i = 0; i < SIZE; i++)
     {
         fscanf(fp, "%[^\n] ", quiz[i].question);
-        fflush(stdin);
         fscanf(fp, "%[^\n] ", quiz[i].answer);
-        fflush(stdin);
     }
 
     fclose(fp);
