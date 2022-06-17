@@ -88,7 +88,7 @@ int main()
                }
           }
 
-          printf("Do you want to play again ? (y/n)\n\n");
+          printf("Do you want to play again ? (y/n) : ");
           scanf("%c", &choice);
           fflush(stdin);
 

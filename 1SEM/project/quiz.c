@@ -50,12 +50,15 @@ int main()
         fflush(stdin);
     }
 
+    fclose(fp);
+
+
     //ADDING A LOOP JUST IN CASE THE USER WANTS TO PLAY AGAIN
     do
     {   
         // USING SRAND AND RAND TO GENERATE A RANDOM NUMBER FOR QUESTION
         srand(time(NULL));
-        i = rand() % 25;
+        i = rand() % SIZE;
 
         //PRINTING QUESTION AND LETTING USER GIVE AN INPUT
         printf("\n%s\n", quiz[i].question);
@@ -85,7 +88,6 @@ int main()
 
     //RELEASING THE ALLOCATED MEMORY FOR GUESS AND CLOSING THE FILE
     free(guess);
-    fclose(fp);
 
     return 0;
 }
