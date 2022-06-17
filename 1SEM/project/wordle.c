@@ -1,4 +1,4 @@
-    #include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -51,6 +51,10 @@ int main ()
     srand(time(NULL));
     int random = rand() % TOTALWORDS;
     strcpy(word, allwords[random].wordleword);
+
+    green();
+    printf("WELCOME TO WORDLE\n");
+    reset();
 
     do
     {

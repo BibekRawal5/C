@@ -164,56 +164,74 @@ int rps()
           //COMPARING THE COMPUTER GENERATED MOVE WITH THE USER GENERATED
     
 
-          //WHEN COMPUTER choiceOSE ROCK
+          //WHEN COMPUTER CHOOSE ROCK
           if (ran == 1)
           {
                if (rps == 's')
                {
-                    printf("\nYou loose, computer choiceose rock\n\n");
+                    red();
+                    printf("\nYou loose, computer choose rock\n\n");
+                    reset();
                }
                else if(rps == 'r')
                {
-               printf("\nYou drew, computer choiceose rock\n\n");
+                    yellow();
+                    printf("\nYou drew, computer choose rock\n\n");
+                    reset();
                }
                else if (rps == 'p')
                {
-                    printf("\nYou won, computer choiceose rock\n\n");
+                    green();
+                    printf("\nYou won, computer choose rock\n\n");
+                    reset();
                }
           }
 
 
-          //WHEN COMPUTER choiceOSE PAPER
+          //WHEN COMPUTER choose PAPER
           else if (ran == 2)
           {
                if (rps == 's')
                {
-                    printf("\nYou won, computer choiceose paper\n\n");
+                    green();
+                    printf("\nYou won, computer choose paper\n\n");
+                    reset();
                }
                else if(rps == 'r')
                {
-               printf("\nYou loose, computer choiceose paper\n\n");
+                    red();
+                    printf("\nYou loose, computer choose paper\n\n");
+                    reset();
                }
                else if (rps == 'p')
                {
-                    printf("\nYou drew, computer choiceose paper\n\n");
+                    yellow();
+                    printf("\nYou drew, computer choose paper\n\n");
+                    reset();
                }
           }
 
 
-          //WHEN COMPUTER choiceOSE SCISSOR
+          //WHEN COMPUTER choose SCISSOR
           else if (ran == 3)
           {
                if (rps == 's')
-               {
-                    printf("\nYou drew, computer choiceose scissor\n\n");
+               {    
+                    yellow();
+                    printf("\nYou drew, computer choose scissor\n\n");
+                    reset();
                }
                else if(rps == 'r')
                {
-               printf("\nYou won, computer choiceose scissor\n\n");
+                    green();
+                    printf("\nYou won, computer choose scissor\n\n");
+                    reset();
                }
                else if(rps == 'p')
                {
-                    printf("\nYou loose, computer choiceose scissor\n\n");
+                    red();
+                    printf("\nYou loose, computer choose scissor\n\n");
+                    reset();
                }
           }
 

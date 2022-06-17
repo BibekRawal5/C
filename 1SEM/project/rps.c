@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>                    //DECLARING ALL THE LIBRARIES USED            
 #include <time.h>
-#include <conio.h>
 
 int main()
 {
@@ -35,56 +34,56 @@ int main()
           //COMPARING THE COMPUTER GENERATED MOVE WITH THE USER GENERATED
     
 
-          //WHEN COMPUTER choiceOSE ROCK
+          //WHEN COMPUTER choose ROCK
           if (ran == 1)
           {
                if (rps == 's')
                {
-                    printf("\nYou loose, computer choiceose rock\n\n");
+                    printf("\nYou loose, computer choose rock\n\n");
                }
                else if(rps == 'r')
                {
-               printf("\nYou drew, computer choiceose rock\n\n");
+               printf("\nYou drew, computer choose rock\n\n");
                }
                else if (rps == 'p')
                {
-                    printf("\nYou won, computer choiceose rock\n\n");
+                    printf("\nYou won, computer choose rock\n\n");
                }
           }
 
 
-          //WHEN COMPUTER choiceOSE PAPER
+          //WHEN COMPUTER choose PAPER
           else if (ran == 2)
           {
                if (rps == 's')
                {
-                    printf("\nYou won, computer choiceose paper\n\n");
+                    printf("\nYou won, computer choose paper\n\n");
                }
                else if(rps == 'r')
                {
-               printf("\nYou loose, computer choiceose paper\n\n");
+               printf("\nYou loose, computer choose paper\n\n");
                }
                else if (rps == 'p')
                {
-                    printf("\nYou drew, computer choiceose paper\n\n");
+                    printf("\nYou drew, computer choose paper\n\n");
                }
           }
 
 
-          //WHEN COMPUTER choiceOSE SCISSOR
+          //WHEN COMPUTER choose SCISSOR
           else if (ran == 3)
           {
                if (rps == 's')
                {
-                    printf("\nYou drew, computer choiceose scissor\n\n");
+                    printf("\nYou drew, computer choose scissor\n\n");
                }
                else if(rps == 'r')
                {
-               printf("\nYou won, computer choiceose scissor\n\n");
+               printf("\nYou won, computer choose scissor\n\n");
                }
                else if(rps == 'p')
                {
-                    printf("\nYou loose, computer choiceose scissor\n\n");
+                    printf("\nYou loose, computer choose scissor\n\n");
                }
           }
 
