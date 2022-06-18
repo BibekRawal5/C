@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
 
 //DECLARING A STRUCT TO STORE ALL THE QUESTIONS AND ANSWERS FROM FILE (FOR QUIZ)
 typedef struct 
@@ -60,11 +61,12 @@ int main()
     fflush(stdin);
 
     //IF USER INPUTS ANYTHING ELSE THAN GAMES AVAILABLE TAKING THEM BACK TO START
-    if ( ret != 1 || game > 3)
+    if ( ret != 1 || game > 3 || game < 1)
     {
         goto start;
     }
 
+    //USER CHOOSE TO PLAY WORDLE
     if(game == 1)
     {
         wordle1();
@@ -85,6 +87,8 @@ int main()
             return 0;
         }
     }
+
+    //USER CHOSE TO PLAY ROCK, PAPER SCISSORS
     else if(game == 2)
     {
         rps();
@@ -105,7 +109,9 @@ int main()
             return 0;
         }
     }
-    else if(game == 3)
+
+    //USER CHOOSE TO PLAY QUIZ
+    else
     {
         quiz2();
         yellow();
@@ -136,21 +142,52 @@ int rps()
 {
       
      //DECLARING ALL THE VARIABLES USED
-     int ran;
-     char rps;
+     int ran, mode, ret;
+     char rps1;
+     char rps2;
      char choice;
+     
+     green();
+     printf("\nWelcome to Rock Paper Scissors\n");
+     reset();
      
      // MAKING A DO LOOP INCASE USER WANTS TO PLAY AGAIN WITHOUT RE-RUNNING THE PROGRAM
      do
      { 
+        //ASKING USER WHICH MODE THEY WANT TO PLAY
+          do
+          {
+               printf("\nWhich mode do you want to play? (Press the number assigend on the left)\n");
+               printf("1. VERSUS AI\n");
+               printf("2. Human vs Human\n");
+               ret = scanf("%i", &mode);
+               fflush(stdin);
+          }while (ret != 1 || mode > 2 || mode < 1);
 
+
+          if(mode == 1)
+          {
+               //SENDING IT TO HUMAN VS AI SECTION OF THE GAME
+               goto AI;
+          }
+          else
+          {
+               //SENDING IT TO THE HUMAN VS HUMAN SECTION
+               goto HUMAN;
+          }
+
+
+        //VERSUS AI
+        //AI LABEL FOR GOTO STATEMENT
+         AI:
+          
           //ASKING THE USER MOVE AND NOT ACCEPTING ANYTHING OTHER THAN ROCK, PAPER AND SCISSORS
           do
           {
                printf("Enter you move: ");
-               scanf("%c", &rps);
+               scanf("%c", &rps1);
                fflush(stdin);
-               if (rps == 'r' || rps == 'p' || rps == 's')
+               if (rps1 == 'r' || rps1 == 'p' || rps1 == 's')
                {
                     break;
                }
@@ -167,19 +204,19 @@ int rps()
           //WHEN COMPUTER CHOOSE ROCK
           if (ran == 1)
           {
-               if (rps == 's')
+               if (rps1 == 's')
                {
                     red();
                     printf("\nYou loose, computer choose rock\n\n");
                     reset();
                }
-               else if(rps == 'r')
+               else if(rps1 == 'r')
                {
                     yellow();
                     printf("\nYou drew, computer choose rock\n\n");
                     reset();
                }
-               else if (rps == 'p')
+               else if (rps1 == 'p')
                {
                     green();
                     printf("\nYou won, computer choose rock\n\n");
@@ -191,19 +228,19 @@ int rps()
           //WHEN COMPUTER choose PAPER
           else if (ran == 2)
           {
-               if (rps == 's')
+               if (rps1 == 's')
                {
                     green();
                     printf("\nYou won, computer choose paper\n\n");
                     reset();
                }
-               else if(rps == 'r')
+               else if(rps1 == 'r')
                {
                     red();
                     printf("\nYou loose, computer choose paper\n\n");
                     reset();
                }
-               else if (rps == 'p')
+               else if (rps1 == 'p')
                {
                     yellow();
                     printf("\nYou drew, computer choose paper\n\n");
@@ -215,19 +252,19 @@ int rps()
           //WHEN COMPUTER choose SCISSOR
           else if (ran == 3)
           {
-               if (rps == 's')
+               if (rps1 == 's')
                {    
                     yellow();
                     printf("\nYou drew, computer choose scissor\n\n");
                     reset();
                }
-               else if(rps == 'r')
+               else if(rps1 == 'r')
                {
                     green();
                     printf("\nYou won, computer choose scissor\n\n");
                     reset();
                }
-               else if(rps == 'p')
+               else if(rps1 == 'p')
                {
                     red();
                     printf("\nYou loose, computer choose scissor\n\n");
@@ -235,11 +272,125 @@ int rps()
                }
           }
 
+        //SENDING THE COMPILER DIRECT TO END SO IT DOEST EXECUTE THE HUMAN CODE TOO
+        goto END;
+
+
+        //HUMAN LABEL FOR GOT STATMENT
+
+          HUMAN:
+          //HUMAN VERSUS HUMAN
+          //ASKING THE USER MOVE AND NOT ACCEPTING ANYTHING OTHER THAN ROCK, PAPER AND SCISSORS
+          //PLAYER 1 MOVE
+
+          printf("Payer 1, ");     
+           do
+          {
+               printf("Enter you move: ");
+               rps1 = getch();
+               printf("*** \n");
+               fflush(stdin);
+               if (rps1 == 'r' || rps1 == 'p' || rps1 == 's')
+               {
+                    break;
+               }
+          }while(1);
+
+
+          //PLAYER 2 move
+          printf("Payer 2, ");     
+           do
+          {
+               printf("Enter you move: ");
+               rps2 = getch();
+               printf("*** \n");
+               fflush(stdin);
+               if (rps2 == 'r' || rps2 == 'p' || rps2 == 's')
+               {
+                    break;
+               }
+          }while(1);
+
+
+           //WHEN PLAYER 2 CHOOSES ROCK
+          if (rps2 == 'r')
+          {
+               if (rps1 == 's')
+               {
+                    green();
+                    printf("\nPlayer 2 wins, he choose rock against scissors.\n\n");
+                    reset();
+               }
+               else if(rps1 == 'r')
+               {
+                    yellow();
+                    printf("\nYou drew, both choose rock.\n\n");
+                    reset();
+               }
+               else if (rps1 == 'p')
+               {
+                    green();
+                    printf("\nPlayer 1 win, he choose paper against rock.\n\n");
+                    reset();
+               }
+          }
+
+
+              //WHEN PLAYER 2 CHOOSES PAPER
+          if (rps2 == 'p')
+          {
+               if (rps1 == 's')
+               {
+                    green();
+                    printf("\nPlayer 1 wins, he choose scissor against paper.\n\n");
+                    reset();
+               }
+               else if(rps1 == 'r')
+               {
+                    green();
+                    printf("\nPlayer 2 wins, he choose paper against rock.\n\n");
+                    reset();
+               }
+               else if (rps1 == 'p')
+               {
+                    yellow();
+                    printf("\nYou drew, both choose paper.\n\n");
+                    reset();
+               }
+          }
+
+
+          //WHEN PLAYER 2 CHOOSES PAPER
+          if (rps2 == 's')
+          {
+               if (rps1 == 's')
+               {
+                    yellow();
+                    printf("\nYou drew, both choose scissor.\n\n");
+                    reset();
+               }
+               else if(rps1 == 'r')
+               {
+                    green();
+                    printf("\nPlayer 1 wins, he choose rock against scissor.\n\n");
+                    reset();
+               }
+               else if (rps1 == 'p')
+               {
+                    green();
+                    printf("\nPlayer 2 wins , he choose scissor against paper.\n\n");
+                    reset();
+               }
+          }
+
+
+        //END LABEL FOR GOTO STATEMENT
+          END:
+
+
           printf("Do you want to play again ? (y/n) : ");
           scanf("%c", &choice);
           fflush(stdin);
-
-
     }while((choice == 'y') || (choice == 'Y'));
      
     return 0;
