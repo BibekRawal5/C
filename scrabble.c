@@ -6,8 +6,8 @@ int compute_score(char p1[], char p2[]);
 
 int main()
 {
-    char player1[20];
-    char player2[20];
+    char player1[200];
+    char player2[200];
     printf("Enter your words\n");
     printf("player 1 :");
     scanf("%s", &player1);
