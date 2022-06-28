@@ -8,17 +8,16 @@ int main ()
     int size = sizeof(arr) / sizeof(arr[0]);
     int swap = 0;
 
-    for (int i = 0; i < 100; i++)
+    for (int i = 100; i > 0; i--)
     {
-        arr[i] = i ;
+        arr[100 - i] = i ;
     }
 
-    
     for (int i = 0; i < size - 1; i++)
     {
         for (int j = 0; j < size - 1 - i; j++)
         {
-            if (arr[j] < arr[j+1])
+            if (arr[j] > arr[j+1])
             {
                 temp = arr[j];
                 arr[j] = arr[j + 1];
@@ -26,13 +25,16 @@ int main ()
                 swap++;
             }
         }
+
         if (swap == 0)
         {
-            return 1;
+            goto already_sorted;
         }
     }
 
-     for ( int i =0; i < 100; i++)
+    already_sorted:
+
+    for ( int i = 0; i < 100; i++)
     {
         printf("%d\n", arr[i]);
     }

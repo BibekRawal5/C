@@ -28,8 +28,6 @@ int main ()
     {
         printf("%d\n", arr[i]);
     }
- 
     
-
     
 }
