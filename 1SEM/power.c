@@ -25,6 +25,6 @@ int calculation(int a, int b)
     }
     else
     {
-        return (a * calculation(a, b-1));
+        return a * calculation(a, b-1);
     }
 }
