@@ -1,4 +1,6 @@
+#include<stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 typedef struct 
 {
@@ -9,6 +11,7 @@ typedef struct
 
 person people[10];
 
+
 void  print_struct(person *p)
 {
     printf("Name = %s\t Age = %d\t Height = %f\n", p->name, p->age, p->height);
@@ -16,17 +19,38 @@ void  print_struct(person *p)
 
 int main()
 {
-    for(int i =0; i<2; i++)
+    int i , j;
+    person *p = malloc(sizeof(person));   
+    for( i =0; i<3; i++)
     {
         fflush(stdin);
         printf("#nter data of struct no %d\n ", i +1 );
         gets(people[i].name);
         scanf("%d", &people[i].age);
         scanf("%f", &people[i].height);
+
     }
 
-    for(int i =0; i<2; i++)
+    for( i = 0; i < 3; i++)
     {
+        *p = people[i];
+        
+        for( j = i + 1; j <3; j++)
+        {  
+		
+            if (strcmp(p->name, people[j].name) == 1)
+            {
+            
+                *p = people[i];
+                people[i] = people[j];
+                people[j] = *p;
+            
+            }
+               
+        }
         print_struct(&people[i]);
     }
+
+    free(p);
+
 }
