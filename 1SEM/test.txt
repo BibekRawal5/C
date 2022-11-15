@@ -1,2 +1,2 @@
-This the test string for fprintf
+welcome buddy
 This is testing for fputs

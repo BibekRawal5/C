@@ -3,15 +3,15 @@
 int main()
 {
     FILE *fp;
-    fp = fopen("test.txt", "w");
+    fp = fopen("D:\\C\\ram.txt", "w");
 
     if ( fp == NULL)
     {
         printf("Error creating the file\n");
         return 1;
     }
-
-    fprintf(fp, "This the test string for fprintf\n");
+    char *s= "welcome buddy\n";
+    fprintf(fp, s);
     fputs("This is testing for fputs\n", fp);
 
     fclose(fp);
