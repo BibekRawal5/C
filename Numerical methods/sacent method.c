@@ -58,7 +58,7 @@ int main()
 		scanf("%lf", &FUNCTION[i]);
 	}
 		
-	points: printf("Enter the 2 points: ");
+	printf("Enter the 2 points: ");
 	scanf("%lf%lf", &a, &b);
 	
 	
