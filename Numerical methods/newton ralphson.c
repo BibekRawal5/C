@@ -74,7 +74,7 @@ int main()
 		scanf("%lf", &FUNCTION[i]);
 	}
 		
-	points: printf("Enter the starting point: ");
+	printf("Enter the starting point: ");
 	scanf("%lf", &a);
 	
 	
