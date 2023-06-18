@@ -40,7 +40,7 @@ int main()
            }
 
           if (remainder != 0) {
-
+   
           printf("%i is divisible by %i other numbers except 1 and itself.\n" , number , remainder );
         }
 
@@ -50,4 +50,3 @@ int main()
   }
 
 
-}
