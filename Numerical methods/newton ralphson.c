@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-//FUNCTION
 double ERROR = 0.00000099;
 double FUNCTION[10]; 
 int order;
